@@ -1,5 +1,8 @@
 import { LogMock } from '../../lib/LogMock';
 import { ListingItemFactory } from '../../../../src/api/factories/ListingItemFactory';
+import { MessagingProtocolType } from '../../../../src/api/enums/MessagingProtocolType';
+import { Currency } from '../../../../src/api/enums/Currency';
+import { EscrowType } from '../../../../src/api/enums/EscrowType';
 
 describe('ListingItemFactory', () => {
 
@@ -18,11 +21,11 @@ describe('ListingItemFactory', () => {
             paymentInformation: {
                 type: 'SALE',
                 escrow: {
-                    type: 'NOP'
+                    type: EscrowType.NOP
                 },
-                itemPrice: { currency: 'BITCOIN', basePrice: 100000000 }
+                itemPrice: { currency: Currency.BITCOIN, basePrice: 100000000 }
             },
-            messagingInformation: [{ protocol: 'SMSG', publicKey: 'publickey2' }],
+            messagingInformation: [{ protocol: MessagingProtocolType.SMSG, publicKey: 'publickey2' }],
             listingItemObjects: {}
         };
     });
